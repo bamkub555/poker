@@ -2,7 +2,7 @@
 import unittest
 import poker
 
-class TestPoker(unittest.Testcase)
+class TestPoker(unittest.Testcase):
     '''Example unittest test methods for poker'''
 
     def test_poker_straight_flush(self):
