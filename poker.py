@@ -11,5 +11,8 @@ def straight(hand):
     return None
 
 def flush(hand):
-    return None
+    suits = []
+    for r,s in hand:
+        suits.append(s)
+    return len(set(suits)) == 1
 
