@@ -9,7 +9,9 @@ def straight_flush(hand):
 
 def straight(hand):
     '''
-    Return Ture if hand is straight,
+    (hand) -> bool
+    
+    Return True if hand is straight,
     return False if not
     '''
     return None
