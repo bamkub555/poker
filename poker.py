@@ -1,7 +1,6 @@
 '''
 This is a first test on poker.py
 Prepare for coding . . .
-- Clone git completed.
 '''
 """ test update poker.py by Supachoke """
 
