@@ -1,8 +1,8 @@
-'''
-This is a first test on poker.py
-Prepare for coding . . .
-'''
-""" test update poker.py by Supachoke """
-""" test update poker.py again for check time update """
+def straight_flush(hand):
+    '''
+    (hand) -> bool
 
-### test for study PSIT please delete before write code or somthing
+    Return True if hand is straight flush,
+    return False if not
+    '''
+    return straight(hand) and flush(hand)
