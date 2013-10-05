@@ -5,6 +5,24 @@ def hand_rank(hand):
     ranks.sort(reverse=True)
     if ranks == [14,5,4,3,2]:
         ranks = [5,4,3,2,1]
+    if straight_flush(hand):
+        return 8, max(ranks)
+    elif kind(4, ranks):
+        return 7, kind(4, ranks)
+    elif fullhouse(ranks):
+        return 6, kind(3, ranks)
+    elif flush(hand):
+        return 5, ranks
+    elif straight(hand):
+        return 4, max(ranks)
+    elif kind(3, ranks):
+        return 3, kind(3, ranks)
+    elif twopair(ranks):
+        return 2, twopair(ranks)[0], twopair(ranks)[1], kind(1, ranks)
+    elif kind(2, ranks):
+        return 1, kind(2, ranks), ranks
+    else:
+        return 0, ranks
         
 def straight_flush(hand):
     '''
