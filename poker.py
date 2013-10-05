@@ -14,19 +14,26 @@ def straight(hand):
     Return True if hand is straight,
     return False if not
     '''
-    return None
+    ranks = []
+    for r,s in hand:
+        ranks.append('--23456789TJQKA'.index(r))
+    ranks.sort(reverse=True)
+    if ranks == [14,5,4,3,2]:
+        ranks = [5,4,3,2,1]
+    return max(ranks)-min(ranks) == 4 and len(set(ranks)) == 5
 
 def flush(hand):
     '''
     (hand) -> bool
 
     Return True if hand is flush,
-    reture False  if not 
+    return False  if not 
     '''
     suits = []
     for r,s in hand:
         suits.append(s)
     return len(set(suits)) == 1
+
 
 
 
