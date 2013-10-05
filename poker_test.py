@@ -30,18 +30,26 @@ class TestPoker(unittest.TestCase):
         
     def test_poker_four_of_kind(self):
         '''Test get four_of_kind'''
-        actual = poker.kind(4, [7,7,7,7,5])
+        actual = poker.kind(4, [7, 7, 7, 7, 5])
         expected = 7
         self.assertEqual(actual, expected)
+
     def test_poker_three_of_kind(self):
         '''Test get three_of_kind'''
-        actual = poker.kind(3, [4,7,7,7,5])
+        actual = poker.kind(3, [4, 7, 7, 7, 5])
         expected = 7
         self.assertEqual(actual, expected)
+
     def test_poker_two_of_kind(self):
         '''Test get two_of_kind'''
-        actual = poker.kind(2, [4,6,7,7,5])
+        actual = poker.kind(2, [4, 6, 7, 7, 5])
         expected = 7
+        self.assertEqual(actual, expected)
+
+    def test_poker_twopair(self):
+        '''Test get twopair'''
+        actual = poker.twopair([9, 9, 8, 7, 7])
+        expected = (9, 8)
         self.assertEqual(actual, expected)
 
 
