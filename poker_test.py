@@ -24,11 +24,14 @@ class TestPoker(unittest.TestCase):
         
     def test_poker_full_house(self):
         '''Test get full_house'''
-        actual = poker.flush(['JC', 'TC', '9C', '8C', '7C'])
-        expected = False
+        actual = poker.fullhouse(['3', '3', '3', '4', '4'])
+        expected = True
         self.assertEqual(actual, expected)
-
-        
+    def test_four_of_a_kind(self)
+        '''Test get four_of_a_kind'''
+        actual = poker.kind(4, [7,7,7,7,5])
+        expected = 7
+        self.assertEqual(actual, expected)
 
 
 
