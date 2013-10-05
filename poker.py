@@ -1,3 +1,7 @@
+def hand_rank(hand):
+    ranks = []
+    for r,s in hand:
+        ranks.append('--23456789TJQKA'.index(r))
 def straight_flush(hand):
     '''
     (hand) -> bool
@@ -34,14 +38,31 @@ def flush(hand):
         suits.append(s)
     return len(set(suits)) == 1
 
-def fullhouse(ranks):
+def full_house(ranks):
     '''
-    (hand) -> bool
+    (ranks) -> bool
 
-    Return True if hand is fullhouse,
+    Return True if hand is full_house,
     return False if not
     '''
     
     return True if kind(3, ranks) and kind(2, ranks) else False
+
+def kind(n,ranks):
+    '''
+    (ranks) -> int
+
+    Return rank if hand is n kind,
+    return 0 if not
+    '''
+    for r in ranks:
+        if ranks.count(r) == n:
+            return r
+    return 0
+        
+
+
+
+    
 
 
