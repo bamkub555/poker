@@ -2,12 +2,15 @@ def hand_rank(hand):
     ranks = []
     for r,s in hand:
         ranks.append('--23456789TJQKA'.index(r))
+    ranks.sort(reverse=True)
+    if ranks == [14,5,4,3,2]:
+        ranks = [5,4,3,2,1]
+        
 def straight_flush(hand):
     '''
     (hand) -> bool
 
-    Return True if hand is straight flush,
-    return False if not
+    Return True if hand is straight flush or False if not
     '''
     return straight(hand) and flush(hand)
 
@@ -15,8 +18,7 @@ def straight(hand):
     '''
     (hand) -> bool
     
-    Return True if hand is straight,
-    return False if not
+    Return True if hand is straight or False if not
     '''
     ranks = []
     for r,s in hand:
@@ -30,8 +32,7 @@ def flush(hand):
     '''
     (hand) -> bool
 
-    Return True if hand is flush,
-    return False  if not 
+    Return True if hand is flush or False if not 
     '''
     suits = []
     for r,s in hand:
@@ -42,8 +43,7 @@ def full_house(ranks):
     '''
     (ranks) -> bool
 
-    Return True if hand is full_house,
-    return False if not
+    Return True if hand is full_house or False if not
     '''
     
     return True if kind(3, ranks) and kind(2, ranks) else False
@@ -52,8 +52,7 @@ def kind(n,ranks):
     '''
     (n, ranks) -> int
 
-    Return rank if hand is n kind,
-    return 0 if not
+    Return rank if hand is n kind or 0 if not
     '''
     for r in ranks:
         if ranks.count(r) == n:
@@ -64,8 +63,8 @@ def twopair(ranks):
     '''
     (ranks) -> int
 
-    Return tuple of highpair and lowpair,
-    return empty tuple if ranks is not twopair
+    Return tuple of highpair and lowpair
+    or empty tuple if ranks is not twopair
     '''
     ranks.sort(reverse=True)
     high_pair = kind(2, ranks)
