@@ -34,6 +34,14 @@ def flush(hand):
         suits.append(s)
     return len(set(suits)) == 1
 
+def fullhouse(ranks):
+    '''
+    (hand) -> bool
 
+    Return True if hand is fullhouse,
+    return False if not
+    '''
+    
+    return True if kind(3, ranks) and kind(2, ranks) else False
 
 
