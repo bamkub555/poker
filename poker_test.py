@@ -49,7 +49,7 @@ class TestPoker(unittest.TestCase):
     def test_poker_twopair(self):
         '''Test get twopair'''
         actual = poker.twopair([9, 9, 8, 7, 7])
-        expected = (9, 8)
+        expected = (9, 7)
         self.assertEqual(actual, expected)
 
 
