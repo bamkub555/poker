@@ -51,7 +51,12 @@ class TestPoker(unittest.TestCase):
         actual = poker.twopair([9, 9, 8, 7, 7])
         expected = (9, 7)
         self.assertEqual(actual, expected)
-
+    def test_poker_hand_rank(self):
+        '''Test get hand_rank'''
+        actual = poker.hand_rank(['4S', '3H', '9D', '8C', 'TS'])
+        expected = (0, [10, 9, 8, 4, 3])
+        self.assertEqual(actual, expected)
+     
 
 
 if __name__ == '__main__':
