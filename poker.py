@@ -50,7 +50,7 @@ def full_house(ranks):
 
 def kind(n,ranks):
     '''
-    (ranks) -> int
+    (n, ranks) -> int
 
     Return rank if hand is n kind,
     return 0 if not
@@ -59,6 +59,22 @@ def kind(n,ranks):
         if ranks.count(r) == n:
             return r
     return 0
+
+def twopair(ranks):
+    '''
+    (ranks) -> int
+
+    Return tuple of highpair and lowpair,
+    return empty tuple if ranks is not twopair
+    '''
+    ranks.sort(reverse=True)
+    high_pair = kind(2, ranks)
+    ranks.sort()
+    low_pair = kind(2, ranks)
+    ranks.sort(reverse=True)
+    if high_pair != low_pair:
+        return (high_pair, low_pair)
+    return ()
         
 
 
