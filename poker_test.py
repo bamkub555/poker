@@ -51,20 +51,23 @@ class TestPoker(unittest.TestCase):
         actual = poker.twopair([9, 9, 8, 7, 7])
         expected = (9, 7)
         self.assertEqual(actual, expected)
+
     def test_poker_high_rank(self):
         '''Test get high_rank'''
         actual = poker.hand_rank(['4S', '3H', '9D', '8C', 'TS'])
         expected = (0, [10, 9, 8, 4, 3])
         self.assertEqual(actual, expected)
+
     def test_poker_hand_rank(self):
         '''Test get hand_rank'''
         actual = poker.hand_rank(['5S', '3H', '9D', '8C', '8S'])
         expected = (1, 8, [9, 8, 8, 5, 3]) 
         self.assertEqual(actual, expected)
+
     def test_poker_all_max(self):
         '''Test get all_max'''
-        actual = poker.all_max((['5S', '3H', '9D', '8C', '8S'],['JC', 'TC', '9C', '8C', '7C']))
-        expected = ['JC', 'TC', '9C', '8C', '7C']
+        actual = poker.all_max([['5S', '3H', '9D', '8C', '8S'],['JC', 'TC', '9C', '8C', '7C']])
+        expected = [['JC', 'TC', '9C', '8C', '7C']]
         self.assertEqual(actual, expected)
      
 
