@@ -121,8 +121,9 @@ def rank(hand):
     for r,s in hand:
         ranks.append('--23456789TJQKA'.index(r))
         ranks.sort(reverse=True)
-    if ranks == [14,5,4,3,2]: ranks = [5,4,3,2,1]
-        return ranks
+    if ranks == [14,5,4,3,2]:
+        ranks = [5,4,3,2,1]
+    return ranks
 
 
     
