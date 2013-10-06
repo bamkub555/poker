@@ -9,7 +9,7 @@ def hand_rank(hand):
         return 8, max(ranks)
     elif kind(4, ranks):
         return 7, kind(4, ranks)
-    elif fullhouse(ranks):
+    elif full_house(ranks):
         return 6, kind(3, ranks)
     elif flush(hand):
         return 5, ranks
