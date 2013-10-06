@@ -4,7 +4,14 @@ def all_max(hands):
     Return list of max rank hand
     or hands if max rank hand has more than one
     '''
-    #return [allmaxrankhand]
+    winhand = max(hands, key=hand_rank)
+    maxval = hand_rank(winhand)
+    result = []
+    for hand in hands:
+        if hand_rank(hand) == maxval:
+            result.append(hand)
+    return result
+
 def hand_rank(hand):
     '''
     (hand)-> tuple
