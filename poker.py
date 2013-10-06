@@ -111,7 +111,18 @@ def twopair(ranks):
         return (high_pair, low_pair)
     return ()
         
+def rank(hand):
+    '''
+    (hand) -> list
 
+    Return ranks
+    '''
+    ranks = []
+    for r,s in hand:
+        ranks.append('--23456789TJQKA'.index(r))
+        ranks.sort(reverse=True)
+    if ranks == [14,5,4,3,2]: ranks = [5,4,3,2,1]
+        return ranks
 
 
     
