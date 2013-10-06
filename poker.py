@@ -1,4 +1,15 @@
+def all_max(hands):
+    '''
+    (hands)-> list
+    Return list of max rank hand
+    or hands if max rank hand has more than one
+    '''
+    #return [allmaxrankhand]
 def hand_rank(hand):
+    '''
+    (hand)-> tuple
+    Return the hand rank of this hand
+    '''
     ranks = []
     for r,s in hand:
         ranks.append('--23456789TJQKA'.index(r))
@@ -79,7 +90,7 @@ def kind(n,ranks):
 
 def twopair(ranks):
     '''
-    (ranks) -> int
+    (ranks) -> tuple
 
     Return tuple of highpair and lowpair
     or empty tuple if ranks is not twopair
