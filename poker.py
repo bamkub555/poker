@@ -1,3 +1,7 @@
+def poker(hands):
+    '''(hands) -> tuple'''
+    return all_max(hands), show_rank(all_max(hands)[0])
+
 def all_max(hands):
     '''
     (hands)-> list
@@ -10,7 +14,10 @@ def all_max(hands):
     for hand in hands:
         if hand_rank(hand) == maxval:
             result.append(hand)
+    return result
 
+def show_rank(hand):
+    '''(hand) -> string'''
     if hand_rank(hand)[0] == 8:
         result_rank = "Straight flush"
     elif hand_rank(hand)[0] == 7:
@@ -29,8 +36,9 @@ def all_max(hands):
         result_rank = "One pair"
     elif hand_rank(hand)[0] == 0:
         result_rank = "High card"
+    return result_rank
 
-    return result, result_rank
+
 
 def hand_rank(hand):
     '''
