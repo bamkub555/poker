@@ -75,6 +75,20 @@ class TestPoker(unittest.TestCase):
         actual = poker.rank(['5S', '3H', '9D', '8C', '8S'])
         expected = [9, 8, 8, 5, 3]
         self.assertEqual(actual, expected)
+
+    def test_poker_show_rank(self):
+        '''Test get show_rank'''
+        actual = poker.show_rank(['JC', 'TC', '9C', '8C', '7C'])
+        expected = 'Straight flush'
+        self.assertEqual(actual, expected)
+
+    def test_poker_poker(self):
+        '''Test get poker'''
+        actual = poker.poker([['5S', '5H', '5D', '5C', '4S'],['JC', 'TC', '9C', '8H', '7S']])
+        expected = ([['5S', '5H', '5D', '5C', '4S']], 'Four of a kind')
+        self.assertEqual(actual, expected)
+
+        
         
      
 
