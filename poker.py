@@ -10,7 +10,27 @@ def all_max(hands):
     for hand in hands:
         if hand_rank(hand) == maxval:
             result.append(hand)
-    return result
+
+    if hand_rank(hand)[0] == 8:
+        result_rank = "Straight flush"
+    elif hand_rank(hand)[0] == 7:
+        result_rank = "Four of a kind"
+    elif hand_rank(hand)[0] == 6:
+        result_rank = "Full house"
+    elif hand_rank(hand)[0] == 5:
+        result_rank = "Flush"
+    elif hand_rank(hand)[0] == 4:
+        result_rank = "Straight"
+    elif hand_rank(hand)[0] == 3:
+        result_rank = "Three of a kind"
+    elif hand_rank(hand)[0] == 2:
+        result_rank = "Two pair"
+    elif hand_rank(hand)[0] == 1:
+        result_rank = "One pair"
+    elif hand_rank(hand)[0] == 0:
+        result_rank = "High card"
+
+    return result, result_rank
 
 def hand_rank(hand):
     '''
